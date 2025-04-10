@@ -24,6 +24,7 @@
 #include "hal_data.h"
 #include "r_mipi_dsi.h"
 #include "common_utils.h"
+#include "graphics_rendering.h"
 
 FSP_CPP_HEADER
 void R_BSP_WarmStart(bsp_warm_start_event_t event);
@@ -36,6 +37,15 @@ FSP_CPP_FOOTER
 void hal_entry(void)
 {
     mipi_dsi_entry();
+
+    CLUT_init();
+
+    RGB_init();
+
+    while (true)
+    {
+        __NOP();
+    }
 
 #if BSP_TZ_SECURE_BUILD
     /* Enter non-secure code */
