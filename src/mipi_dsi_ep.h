@@ -31,6 +31,7 @@
 #define BYTES_PER_PIXEL_RGB565                       (4)
 #define BYTES_PER_PIXEL_CLUT8                        (1)
 #define COLOR_BAND_COUNT                             (8)
+#define COLOR_BAND_COUNT_CLUT                        (16)
 #define BLUE                                         (0x000000FF)
 #define LIME                                         (0xFF00FF00)
 #define RED                                          (0x00FF0000)

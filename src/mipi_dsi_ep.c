@@ -354,8 +354,6 @@ void mipi_dsi_start_display(void)
     /* Handle error */
     handle_error(err, "** CLUT Update failed ** \r\n");
 
-    display_draw_clut8(&fb_foreground);
-
     /* Get timer information */
     err = R_GPT_InfoGet (&g_timer0_ctrl, &timer_info);
     /* Handle error */
@@ -373,6 +371,22 @@ void mipi_dsi_start_display(void)
 
     display_clear_rgb565 (gp_single_buffer);
     display_clear_rgb565 (gp_double_buffer);
+
+
+
+
+    //DRAW CLUT TABLE:
+    volatile uint32_t my_size = sizeof(fb_foreground[0]);
+    memset(&fb_foreground[0], 0x77, my_size / 7 );
+
+
+
+
+    display_draw_clut8(&fb_foreground);
+
+
+
+
 
 
 
@@ -562,23 +576,19 @@ static void display_draw_clut8 (uint8_t * framebuffer)
 {
     /* Draw buffer */
 
-//    uint16_t bit_width = g_hz_size1 / COLOR_BAND_COUNT;
-//    for (uint32_t y = 0; y < g_vr_size1; y++)
-//    {
-//        for (uint32_t x = 0; x < g_hz_size1; x++)
-//        {
-//            uint8_t bit       = (uint8_t) (x / bit_width);
-//            framebuffer[x] = bit;
-//        }
-//        framebuffer += g_hstride1;
-//    }
-
-    uint8_t bit_width = (uint8_t)(g_vr_size1 / COLOR_BAND_COUNT);
+    uint8_t bit_width = (uint8_t)(g_vr_size1 / COLOR_BAND_COUNT_CLUT);
     volatile uint8_t bit       = 0;
+
     for (uint32_t y = 0; y < g_vr_size1; y++)
     {
-
+        bit = 0;
+#if CLUT_MODE == CLUT8
         bit = y / bit_width;
+#elif CLUT_MODE == CLUT4
+        bit = ((y)/bit_width)<<4 | ((y)/bit_width);
+#elif CLUT_MODE == CLUT1
+
+#endif
 //        bit = 1;
 
         for (uint32_t x = 0; x < g_hz_size1; x++)
@@ -586,7 +596,13 @@ static void display_draw_clut8 (uint8_t * framebuffer)
 
             framebuffer[x] = bit;
         }
+#if CLUT_MODE == CLUT8
         framebuffer += g_hstride1;
+#elif CLUT_MODE == CLUT4
+        framebuffer += g_hstride1/2;
+#elif CLUT_MODE == CLUT1
+        framebuffer += g_hstride1/8;
+#endif
     }
 }
 

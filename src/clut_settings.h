@@ -8,11 +8,20 @@
 #ifndef CLUT_SETTINGS_H_
 #define CLUT_SETTINGS_H_
 
+#include "common_data.h"
 
 #define CLUT8 1U
 #define CLUT4 2U
 #define CLUT1 3U
 #define CLUT_MODE CLUT8
+
+#if defined(DISPLAY_IN_FORMAT_CLUT8_1)
+#define CLUT_MODE CLUT8
+#elif defined(DISPLAY_IN_FORMAT_CLUT4_1)
+#define CLUT_MODE CLUT4
+#elif defined(DISPLAY_IN_FORMAT_CLUT1_1)
+#define CLUT_MODE CLUT1
+#endif
 
 
 #define  CLUT_BLACK         0xBF000000                    // Black
