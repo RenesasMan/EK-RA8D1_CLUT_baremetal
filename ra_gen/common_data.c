@@ -302,7 +302,7 @@ const display_cfg_t g_display_cfg =
 #endif
             .hsize = DISPLAY_HSIZE_INPUT1,
             .vsize = DISPLAY_VSIZE_INPUT1, .hstride = DISPLAY_BUFFER_STRIDE_PIXELS_INPUT1, .format =
-                    DISPLAY_IN_FORMAT_CLUT8,
+                    DISPLAY_IN_FORMAT_CLUT1,
             .line_descending_enable = false, .lines_repeat_enable = false, .lines_repeat_times = 0 },
 
           /** Input1(Graphics1 layer) layer configuration */
@@ -430,7 +430,7 @@ const display_cfg_t g_display_cfg =
                 .hsize               = DISPLAY_HSIZE_INPUT1,
                 .vsize               = DISPLAY_VSIZE_INPUT1,
                 .hstride             = DISPLAY_BUFFER_STRIDE_PIXELS_INPUT1,
-                .format              = DISPLAY_IN_FORMAT_CLUT8,
+                .format              = DISPLAY_IN_FORMAT_CLUT1,
                 .line_descending_enable = false,
                 .lines_repeat_enable = false,
                 .lines_repeat_times  = 0

@@ -11,13 +11,13 @@
 #define CLUT8 1U
 #define CLUT4 2U
 #define CLUT1 3U
-#define CLUT_MODE CLUT8
+//#define CLUT_MODE CLUT8
 
 #if defined(DISPLAY_IN_FORMAT_CLUT8_1)
 #define CLUT_MODE CLUT8
 #elif defined(DISPLAY_IN_FORMAT_CLUT4_1)
 #define CLUT_MODE CLUT4
-#elif defined(DISPLAY_IN_FORMAT_CLUT1_1)
+#else
 #define CLUT_MODE CLUT1
 #endif
 
@@ -42,7 +42,13 @@
 #define BYTES_PER_PIXEL_RGB565                       (4)
 #define BYTES_PER_PIXEL_CLUT8                        (1)
 #define COLOR_BAND_COUNT                             (8)
+
+#if (CLUT_MODE == CLUT1)
+#define COLOR_BAND_COUNT_CLUT                        (2)
+#else
 #define COLOR_BAND_COUNT_CLUT                        (15)
+#endif
+
 #define BLUE                                         (0x000000FF)
 #define LIME                                         (0xFF00FF00)
 #define RED                                          (0x00FF0000)

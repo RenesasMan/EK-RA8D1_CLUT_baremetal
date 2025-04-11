@@ -141,8 +141,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/graphics_rendering.o
  .data          0x00000000        0x0 ./src/graphics_rendering.o
  .bss           0x00000000        0x0 ./src/graphics_rendering.o
- .data.clut_1   0x00000000        0x8 ./src/graphics_rendering.o
  .data.clut_4   0x00000000       0x40 ./src/graphics_rendering.o
+ .data.clut_8   0x00000000       0x40 ./src/graphics_rendering.o
  .bss.gp_frame_buffer
                 0x00000000        0x4 ./src/graphics_rendering.o
  .text          0x00000000        0x0 ./src/gt911.o
@@ -1000,215 +1000,216 @@ END GROUP
                 0x020008d4       0x20 ./src/SEGGER_RTT/SEGGER_RTT_printf.o
                 0x020008d4                SEGGER_RTT_printf
  .text.CLUT_init
-                0x020008f4       0xbc ./src/graphics_rendering.o
+                0x020008f4       0xb8 ./src/graphics_rendering.o
                 0x020008f4                CLUT_init
  .text.RGB_init
-                0x020009b0       0xf4 ./src/graphics_rendering.o
-                0x020009b0                RGB_init
+                0x020009ac       0xf4 ./src/graphics_rendering.o
+                0x020009ac                RGB_init
  .text.i2c_master_callback
-                0x02000aa4       0x10 ./src/gt911.o
-                0x02000aa4                i2c_master_callback
+                0x02000aa0       0x10 ./src/gt911.o
+                0x02000aa0                i2c_master_callback
  .text.hal_entry
-                0x02000ab4       0x14 ./src/hal_entry.o
-                0x02000ab4                hal_entry
+                0x02000ab0       0x14 ./src/hal_entry.o
+                0x02000ab0                hal_entry
  .text.R_BSP_WarmStart
-                0x02000ac8       0x18 ./src/hal_entry.o
-                0x02000ac8                R_BSP_WarmStart
+                0x02000ac4       0x18 ./src/hal_entry.o
+                0x02000ac4                R_BSP_WarmStart
  .text.handle_error.part.0
-                0x02000ae0       0xf0 ./src/mipi_dsi_ep.o
+                0x02000adc       0xf0 ./src/mipi_dsi_ep.o
  .text.mipi_dsi_push_table
-                0x02000bd0       0x84 ./src/mipi_dsi_ep.o
-                0x02000bd0                mipi_dsi_push_table
+                0x02000bcc       0x84 ./src/mipi_dsi_ep.o
+                0x02000bcc                mipi_dsi_push_table
  .text.mipi_dsi_start_display
-                0x02000c54       0x64 ./src/mipi_dsi_ep.o
-                0x02000c54                mipi_dsi_start_display
+                0x02000c50       0x64 ./src/mipi_dsi_ep.o
+                0x02000c50                mipi_dsi_start_display
  .text.external_irq_callback
-                0x02000cb8       0x1c ./src/mipi_dsi_ep.o
-                0x02000cb8                external_irq_callback
+                0x02000cb4       0x1c ./src/mipi_dsi_ep.o
+                0x02000cb4                external_irq_callback
  .text.touch_screen_reset
-                0x02000cd4       0x7c ./src/mipi_dsi_ep.o
-                0x02000cd4                touch_screen_reset
+                0x02000cd0       0x7c ./src/mipi_dsi_ep.o
+                0x02000cd0                touch_screen_reset
  .text.glcdc_callback
-                0x02000d50       0x14 ./src/mipi_dsi_ep.o
-                0x02000d50                glcdc_callback
+                0x02000d4c       0x14 ./src/mipi_dsi_ep.o
+                0x02000d4c                glcdc_callback
  .text.mipi_dsi_callback
-                0x02000d64       0x30 ./src/mipi_dsi_ep.o
-                0x02000d64                mipi_dsi_callback
+                0x02000d60       0x30 ./src/mipi_dsi_ep.o
+                0x02000d60                mipi_dsi_callback
  .text.gpt_callback
-                0x02000d94       0x10 ./src/mipi_dsi_ep.o
-                0x02000d94                gpt_callback
+                0x02000d90       0x10 ./src/mipi_dsi_ep.o
+                0x02000d90                gpt_callback
  .text.mipi_dsi_entry
-                0x02000da4       0xec ./src/mipi_dsi_ep.o
-                0x02000da4                mipi_dsi_entry
+                0x02000da0       0xec ./src/mipi_dsi_ep.o
+                0x02000da0                mipi_dsi_entry
  .text.startup.main
-                0x02000e90        0xc ./ra_gen/main.o
-                0x02000e90                main
+                0x02000e8c        0xc ./ra_gen/main.o
+                0x02000e8c                main
  .text.r_mipi_phy_close
-                0x02000e9c       0x28 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
-                0x02000e9c                r_mipi_phy_close
+                0x02000e98       0x28 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+                0x02000e98                r_mipi_phy_close
  .text.r_mipi_phy_open
-                0x02000ec4       0xec ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
-                0x02000ec4                r_mipi_phy_open
+                0x02000ec0       0xec ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+                0x02000ec0                r_mipi_phy_open
  .text.R_MIPI_DSI_UlpsEnter
-                0x02000fb0       0x58 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02000fb0                R_MIPI_DSI_UlpsEnter
+                0x02000fac       0x58 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02000fac                R_MIPI_DSI_UlpsEnter
  .text.R_MIPI_DSI_UlpsExit
-                0x02001008       0x50 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001008                R_MIPI_DSI_UlpsExit
+                0x02001004       0x50 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001004                R_MIPI_DSI_UlpsExit
  .text.R_MIPI_DSI_StatusGet
-                0x02001058       0x24 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001058                R_MIPI_DSI_StatusGet
+                0x02001054       0x24 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001054                R_MIPI_DSI_StatusGet
  .text.dsi_call_callback
-                0x0200107c       0x3c ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001078       0x3c ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
  .text.R_MIPI_DSI_Start
-                0x020010b8       0x68 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x020010b8                R_MIPI_DSI_Start
+                0x020010b4       0x68 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x020010b4                R_MIPI_DSI_Start
  .text.R_MIPI_DSI_Command
-                0x02001120      0x114 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001120                R_MIPI_DSI_Command
+                0x0200111c      0x114 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x0200111c                R_MIPI_DSI_Command
  .text.R_MIPI_DSI_Stop
-                0x02001234       0x40 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001234                R_MIPI_DSI_Stop
+                0x02001230       0x40 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001230                R_MIPI_DSI_Stop
  .text.R_MIPI_DSI_Open
-                0x02001274      0x554 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001274                R_MIPI_DSI_Open
+                0x02001270      0x554 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001270                R_MIPI_DSI_Open
  .text.R_MIPI_DSI_Close
-                0x020017c8      0x194 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x020017c8                R_MIPI_DSI_Close
+                0x020017c4      0x194 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x020017c4                R_MIPI_DSI_Close
  .text.mipi_dsi_seq0_isr
-                0x0200195c       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x0200195c                mipi_dsi_seq0_isr
+                0x02001958       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001958                mipi_dsi_seq0_isr
  .text.mipi_dsi_seq1_isr
-                0x020019b0       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x020019b0                mipi_dsi_seq1_isr
+                0x020019ac       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x020019ac                mipi_dsi_seq1_isr
  .text.mipi_dsi_vin1_isr
-                0x02001a04       0xe4 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001a04                mipi_dsi_vin1_isr
+                0x02001a00       0xe4 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001a00                mipi_dsi_vin1_isr
  .text.mipi_dsi_rcv_isr
-                0x02001ae8       0x64 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001ae8                mipi_dsi_rcv_isr
+                0x02001ae4       0x64 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001ae4                mipi_dsi_rcv_isr
  .text.mipi_dsi_ferr_isr
-                0x02001b4c       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001b4c                mipi_dsi_ferr_isr
+                0x02001b48       0x54 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001b48                mipi_dsi_ferr_isr
  .text.mipi_dsi_ppi_isr
-                0x02001ba0       0x78 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
-                0x02001ba0                mipi_dsi_ppi_isr
+                0x02001b9c       0x78 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x02001b9c                mipi_dsi_ppi_isr
  .text.R_IOPORT_Close
-                0x02001c18        0xc ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001c18                R_IOPORT_Close
+                0x02001c14        0xc ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001c14                R_IOPORT_Close
  .text.R_IOPORT_PinRead
-                0x02001c24       0x24 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001c24                R_IOPORT_PinRead
+                0x02001c20       0x24 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001c20                R_IOPORT_PinRead
  .text.R_IOPORT_PortRead
-                0x02001c48       0x14 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001c48                R_IOPORT_PortRead
+                0x02001c44       0x14 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001c44                R_IOPORT_PortRead
  .text.R_IOPORT_PortWrite
-                0x02001c5c       0x1c ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001c5c                R_IOPORT_PortWrite
+                0x02001c58       0x1c ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001c58                R_IOPORT_PortWrite
  .text.R_IOPORT_PinWrite
-                0x02001c78       0x28 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001c78                R_IOPORT_PinWrite
+                0x02001c74       0x28 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001c74                R_IOPORT_PinWrite
  .text.R_IOPORT_PortDirectionSet
-                0x02001ca0       0x2c ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001ca0                R_IOPORT_PortDirectionSet
+                0x02001c9c       0x2c ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001c9c                R_IOPORT_PortDirectionSet
  .text.R_IOPORT_PortEventInputRead
-                0x02001ccc       0x18 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001ccc                R_IOPORT_PortEventInputRead
+                0x02001cc8       0x18 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001cc8                R_IOPORT_PortEventInputRead
  .text.R_IOPORT_PinEventInputRead
-                0x02001ce4       0x34 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001ce4                R_IOPORT_PinEventInputRead
+                0x02001ce0       0x34 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001ce0                R_IOPORT_PinEventInputRead
  .text.R_IOPORT_PortEventOutputWrite
-                0x02001d18       0x1c ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001d18                R_IOPORT_PortEventOutputWrite
+                0x02001d14       0x1c ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001d14                R_IOPORT_PortEventOutputWrite
  .text.R_IOPORT_PinEventOutputWrite
-                0x02001d34       0x34 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001d34                R_IOPORT_PinEventOutputWrite
+                0x02001d30       0x34 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001d30                R_IOPORT_PinEventOutputWrite
  .text.bsp_vbatt_init
-                0x02001d68       0xec ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001d64       0xec ./ra/fsp/src/r_ioport/r_ioport.o
  .text.r_ioport_pins_config
-                0x02001e54       0xb4 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001e50       0xb4 ./ra/fsp/src/r_ioport/r_ioport.o
  .text.R_IOPORT_Open
-                0x02001f08       0x14 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001f08                R_IOPORT_Open
+                0x02001f04       0x14 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001f04                R_IOPORT_Open
  .text.R_IOPORT_PinsCfg
-                0x02001f1c        0xc ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001f1c                R_IOPORT_PinsCfg
+                0x02001f18        0xc ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001f18                R_IOPORT_PinsCfg
  .text.R_IOPORT_PinCfg
-                0x02001f28       0xa8 ./ra/fsp/src/r_ioport/r_ioport.o
-                0x02001f28                R_IOPORT_PinCfg
+                0x02001f24       0xa8 ./ra/fsp/src/r_ioport/r_ioport.o
+                0x02001f24                R_IOPORT_PinCfg
  .text.iic_master_notify
-                0x02001fd0       0x3c ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x02001fcc       0x3c ./ra/fsp/src/r_iic_master/r_iic_master.o
  .text.iic_master_open_hw_master
-                0x0200200c      0x218 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x02002008      0x218 ./ra/fsp/src/r_iic_master/r_iic_master.o
  .text.R_IIC_MASTER_Open
-                0x02002224       0x84 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x02002224                R_IIC_MASTER_Open
+                0x02002220       0x84 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x02002220                R_IIC_MASTER_Open
  .text.R_IIC_MASTER_Close
-                0x020022a8       0xe0 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x020022a8                R_IIC_MASTER_Close
+                0x020022a4       0xe0 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x020022a4                R_IIC_MASTER_Close
  .text.iic_master_rxi_isr
-                0x02002388      0x180 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x02002388                iic_master_rxi_isr
+                0x02002384      0x180 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x02002384                iic_master_rxi_isr
  .text.iic_master_txi_isr
-                0x02002508      0x10c ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x02002508                iic_master_txi_isr
+                0x02002504      0x10c ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x02002504                iic_master_txi_isr
  .text.iic_master_tei_isr
-                0x02002614       0xdc ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x02002614                iic_master_tei_isr
+                0x02002610       0xdc ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x02002610                iic_master_tei_isr
  .text.iic_master_eri_isr
-                0x020026f0      0x134 ./ra/fsp/src/r_iic_master/r_iic_master.o
-                0x020026f0                iic_master_eri_isr
+                0x020026ec      0x134 ./ra/fsp/src/r_iic_master/r_iic_master.o
+                0x020026ec                iic_master_eri_isr
  .text.R_ICU_ExternalIrqOpen
-                0x02002824       0x84 ./ra/fsp/src/r_icu/r_icu.o
-                0x02002824                R_ICU_ExternalIrqOpen
+                0x02002820       0x84 ./ra/fsp/src/r_icu/r_icu.o
+                0x02002820                R_ICU_ExternalIrqOpen
  .text.R_ICU_ExternalIrqEnable
-                0x020028a8       0x44 ./ra/fsp/src/r_icu/r_icu.o
-                0x020028a8                R_ICU_ExternalIrqEnable
+                0x020028a4       0x44 ./ra/fsp/src/r_icu/r_icu.o
+                0x020028a4                R_ICU_ExternalIrqEnable
  .text.R_ICU_ExternalIrqClose
-                0x020028ec       0x4c ./ra/fsp/src/r_icu/r_icu.o
-                0x020028ec                R_ICU_ExternalIrqClose
+                0x020028e8       0x4c ./ra/fsp/src/r_icu/r_icu.o
+                0x020028e8                R_ICU_ExternalIrqClose
  .text.r_icu_isr
-                0x02002938       0x78 ./ra/fsp/src/r_icu/r_icu.o
-                0x02002938                r_icu_isr
+                0x02002934       0x78 ./ra/fsp/src/r_icu/r_icu.o
+                0x02002934                r_icu_isr
  .text.r_gpt_call_callback
-                0x020029b0       0x3c ./ra/fsp/src/r_gpt/r_gpt.o
+                0x020029ac       0x3c ./ra/fsp/src/r_gpt/r_gpt.o
  .text.R_GPT_InfoGet
-                0x020029ec       0x88 ./ra/fsp/src/r_gpt/r_gpt.o
-                0x020029ec                R_GPT_InfoGet
+                0x020029e8       0x88 ./ra/fsp/src/r_gpt/r_gpt.o
+                0x020029e8                R_GPT_InfoGet
  .text.r_gpt_enable_irq
-                0x02002a74       0x60 ./ra/fsp/src/r_gpt/r_gpt.o
+                0x02002a70       0x60 ./ra/fsp/src/r_gpt/r_gpt.o
  .text.R_GPT_Open
-                0x02002ad4      0x138 ./ra/fsp/src/r_gpt/r_gpt.o
-                0x02002ad4                R_GPT_Open
+                0x02002ad0      0x138 ./ra/fsp/src/r_gpt/r_gpt.o
+                0x02002ad0                R_GPT_Open
  .text.R_GPT_Close
-                0x02002c0c       0xa4 ./ra/fsp/src/r_gpt/r_gpt.o
-                0x02002c0c                R_GPT_Close
+                0x02002c08       0xa4 ./ra/fsp/src/r_gpt/r_gpt.o
+                0x02002c08                R_GPT_Close
  .text.gpt_counter_overflow_isr
-                0x02002cb0       0x90 ./ra/fsp/src/r_gpt/r_gpt.o
-                0x02002cb0                gpt_counter_overflow_isr
+                0x02002cac       0x90 ./ra/fsp/src/r_gpt/r_gpt.o
+                0x02002cac                gpt_counter_overflow_isr
  .text.R_GLCDC_Start
-                0x02002d40       0x3c ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x02002d40                R_GLCDC_Start
+                0x02002d3c       0x3c ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x02002d3c                R_GLCDC_Start
  .text.R_GLCDC_ClutUpdate
-                0x02002d7c       0x40 ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x02002d7c                R_GLCDC_ClutUpdate
+                0x02002d78       0x40 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x02002d78                R_GLCDC_ClutUpdate
  .text.R_GLCDC_Close
-                0x02002dbc      0x134 ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x02002dbc                R_GLCDC_Close
+                0x02002db8      0x134 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x02002db8                R_GLCDC_Close
  .text.r_glcdc_graphics_layer_set
-                0x02002ef0      0x2d8 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x02002eec      0x2d8 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .text.R_GLCDC_Open
-                0x020031c8      0x420 ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x020031c8                R_GLCDC_Open
+                0x020031c4      0x420 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x020031c4                R_GLCDC_Open
  .text.glcdc_line_detect_isr
-                0x020035e8       0x80 ./ra/fsp/src/r_glcdc/r_glcdc.o
-                0x020035e8                glcdc_line_detect_isr
+                0x020035e4       0x80 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x020035e4                glcdc_line_detect_isr
  .text.SystemCoreClockUpdate
-                0x02003668       0x8c ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
-                0x02003668                SystemCoreClockUpdate
+                0x02003664       0x8c ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x02003664                SystemCoreClockUpdate
  .text.R_BSP_SubClockStabilizeWaitAfterReset
-                0x020036f4        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
-                0x020036f4                R_BSP_SubClockStabilizeWaitAfterReset
+                0x020036f0        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x020036f0                R_BSP_SubClockStabilizeWaitAfterReset
+ *fill*         0x020036f4        0x4 ff
  .text.bsp_clock_init
                 0x020036f8      0x188 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
                 0x020036f8                bsp_clock_init
@@ -1460,7 +1461,7 @@ END GROUP
                 0x22000000                        . = ORIGIN (RAM)
  *(.fsp_dtc_vector_table)
 
-.data           0x22000000       0x54 load address 0x020054e4
+.data           0x22000000       0x1c load address 0x020054e4
                 0x22000000                        __data_start__ = .
                 0x22000000                        . = ALIGN (0x4)
                 0x22000000                        __Code_In_RAM_Start = .
@@ -1471,45 +1472,45 @@ END GROUP
  .data.clut_cfg
                 0x22000000        0x8 ./src/graphics_rendering.o
                 0x22000000                clut_cfg
- .data.clut_8   0x22000008       0x40 ./src/graphics_rendering.o
-                0x22000008                clut_8
+ .data.clut_1   0x22000008        0x8 ./src/graphics_rendering.o
+                0x22000008                clut_1
  .data.g_clut_data_latched
-                0x22000048        0x2 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x22000010        0x2 ./ra/fsp/src/r_glcdc/r_glcdc.o
  *(.data)
-                0x2200004c                        . = ALIGN (0x4)
- *fill*         0x2200004a        0x2 
-                0x2200004c                        PROVIDE (__preinit_array_start = .)
+                0x22000014                        . = ALIGN (0x4)
+ *fill*         0x22000012        0x2 
+                0x22000014                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x2200004c                        PROVIDE (__preinit_array_end = .)
-                0x2200004c                        . = ALIGN (0x4)
-                0x2200004c                        PROVIDE (__init_array_start = .)
+                0x22000014                        PROVIDE (__preinit_array_end = .)
+                0x22000014                        . = ALIGN (0x4)
+                0x22000014                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x2200004c        0x4 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtbegin.o
-                0x22000050                        PROVIDE (__init_array_end = .)
-                0x22000050                        . = ALIGN (0x4)
+ .init_array    0x22000014        0x4 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtbegin.o
+                0x22000018                        PROVIDE (__init_array_end = .)
+                0x22000018                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x22000050        0x4 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtbegin.o
+ .fini_array    0x22000018        0x4 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
  *(.jcr*)
-                0x22000054                        . = ALIGN (0x4)
-                0x22000054                        __data_end__ = .
+                0x2200001c                        . = ALIGN (0x4)
+                0x2200001c                        __data_end__ = .
 
 .tm_clone_table
-                0x22000054        0x0 load address 0x02005538
+                0x2200001c        0x0 load address 0x02005500
  .tm_clone_table
-                0x22000054        0x0 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtbegin.o
+                0x2200001c        0x0 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtbegin.o
  .tm_clone_table
-                0x22000054        0x0 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtend.o
+                0x2200001c        0x0 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtend.o
 
-.igot.plt       0x22000054        0x0 load address 0x02005538
- .igot.plt      0x22000054        0x0 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtbegin.o
-                0x22000054                        . = .
-                0x02005538                        __dtcm_data_pre_location = (LOADADDR (.data) + SIZEOF (.data))
+.igot.plt       0x2200001c        0x0 load address 0x02005500
+ .igot.plt      0x2200001c        0x0 C:/Renesas/RA/e2studio_v2025-01_fsp_v5.8.0/toolchains/gcc_arm/13.2.rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v8-m.main+dp/hard/crtbegin.o
+                0x2200001c                        . = .
+                0x02005500                        __dtcm_data_pre_location = (LOADADDR (.data) + SIZEOF (.data))
 
-.dtcm_data      0x20000000        0x0 load address 0x02005540
+.dtcm_data      0x20000000        0x0 load address 0x02005500
                 0x20000000                        __tz_DTCM_S = ABSOLUTE (DTCM_START)
                 0x20000000                        __dtcm_data_start = .
  *(.dtcm_data*)
@@ -1523,8 +1524,8 @@ END GROUP
                 0x20000000                        . = ALIGN (0x8)
                 0x20000000                        __dtcm_bss_end = .
                 0x20000000                        __tz_DTCM_N = DEFINED (DTCM_NS_START)?ABSOLUTE (DTCM_NS_START):ALIGN (__dtcm_bss_end, 0x2000)
-                0x02005540                        __dtcm_data_init_start = LOADADDR (.dtcm_data)
-                0x02005540                        __dtcm_data_init_end = (LOADADDR (.dtcm_data) + SIZEOF (.dtcm_data))
+                0x02005500                        __dtcm_data_init_start = LOADADDR (.dtcm_data)
+                0x02005500                        __dtcm_data_init_end = (LOADADDR (.dtcm_data) + SIZEOF (.dtcm_data))
                 0x00000001                        ASSERT (((ORIGIN (DTCM) % 0x8) == 0x0), DTCM memory region origin must be aligned to 8 bytes.)
                 0x00000001                        ASSERT (((LENGTH (DTCM) % 0x8) == 0x0), DTCM memory region length must be a multiple of 8 bytes.)
                 0x00000001                        ASSERT ((LOADADDR (.dtcm_bss) == ADDR (.dtcm_bss)), .dtcm_bss has (VMA != LMA) but should be NOLOAD (VMA == LMA).)
@@ -1533,8 +1534,8 @@ END GROUP
                 0x00000001                        ASSERT (((LOADADDR (.dtcm_bss) % 0x8) == 0x0), .dtcm_bss section must be aligned to 8 bytes.)
                 0x00000001                        ASSERT (((SIZEOF (.dtcm_bss) % 0x8) == 0x0), .dtcm_bss section size must be a multiple of 8 bytes.)
                 0x00000001                        ASSERT ((__dtcm_bss_start == __dtcm_data_end), .dtcm_bss section is not adjacent to .dtcm_data section.)
-                0x02005538                        . = (SIZEOF (.dtcm_data) > 0x0)?__dtcm_data_init_end:__dtcm_data_pre_location
-                0x02005538                        sgstubs_pre_location = .
+                0x02005500                        . = (SIZEOF (.dtcm_data) > 0x0)?__dtcm_data_init_end:__dtcm_data_pre_location
+                0x02005500                        sgstubs_pre_location = .
                 0x02005800                        SGSTUBS_LOC = (DEFINED (PROJECT_SECURE) && DEFINED (FLASH_NSC_START))?ABSOLUTE (FLASH_NSC_START):ALIGN (0x400)
 
 .gnu.sgstubs    0x02005800        0x0
@@ -1553,10 +1554,10 @@ END GROUP
  *(.code_in_qspi*)
                 0x60000000                        __qspi_flash_end__ = .
                 0x00000000                        __qspi_flash_code_size__ = (__qspi_flash_end__ - __qspi_flash_start__)
-                0x02005538                        __qspi_flash_code_addr__ = sgstubs_pre_location
+                0x02005500                        __qspi_flash_code_addr__ = sgstubs_pre_location
 
 .qspi_non_retentive
-                0x60000000        0x0 load address 0x02005538
+                0x60000000        0x0 load address 0x02005500
                 0x60000000                        __qspi_non_retentive_start__ = .
  *(.qspi_non_retentive*)
                 0x60000000                        __qspi_non_retentive_end__ = .
@@ -1589,10 +1590,10 @@ END GROUP
  *(.code_in_ospi_device_0*)
                 0x80000000                        __ospi_device_0_end__ = .
                 0x00000000                        __ospi_device_0_code_size__ = (__ospi_device_0_end__ - __ospi_device_0_start__)
-                0x02005538                        __ospi_device_0_code_addr__ = (sgstubs_pre_location + SIZEOF (.qspi_non_retentive))
+                0x02005500                        __ospi_device_0_code_addr__ = (sgstubs_pre_location + SIZEOF (.qspi_non_retentive))
 
 .ospi_device_0_non_retentive
-                0x80000000        0x0 load address 0x02005538
+                0x80000000        0x0 load address 0x02005500
                 0x80000000                        __ospi_device_0_non_retentive_start__ = .
  *(.ospi_device_0_non_retentive*)
                 0x80000000                        __ospi_device_0_non_retentive_end__ = .
@@ -1609,10 +1610,10 @@ END GROUP
  *(.code_in_ospi_device_1*)
                 0x90000000                        __ospi_device_1_end__ = .
                 0x00000000                        __ospi_device_1_code_size__ = (__ospi_device_1_end__ - __ospi_device_1_start__)
-                0x02005538                        __ospi_device_1_code_addr__ = (sgstubs_pre_location + (SIZEOF (.qspi_non_retentive) + SIZEOF (.ospi_device_0_non_retentive)))
+                0x02005500                        __ospi_device_1_code_addr__ = (sgstubs_pre_location + (SIZEOF (.qspi_non_retentive) + SIZEOF (.ospi_device_0_non_retentive)))
 
 .ospi_device_1_non_retentive
-                0x90000000        0x0 load address 0x02005538
+                0x90000000        0x0 load address 0x02005500
                 0x90000000                        __ospi_device_1_non_retentive_start__ = .
  *(.ospi_device_1_non_retentive*)
                 0x90000000                        __ospi_device_1_non_retentive_end__ = .
@@ -1622,25 +1623,25 @@ END GROUP
                 0xa0000000                        __ospi_device_1_region_end_address__ = (__ospi_device_1_start__ + __ospi_device_1_region_max_size__)
                 0x90000000                        __tz_OSPI_DEVICE_1_N = __ospi_device_1_non_retentive_end__
 
-.noinit         0x22000054       0x2c
-                0x22000054                        . = ALIGN (0x4)
-                0x22000054                        __noinit_start = .
+.noinit         0x2200001c       0x2c
+                0x2200001c                        . = ALIGN (0x4)
+                0x2200001c                        __noinit_start = .
  *(.noinit*)
- .noinit        0x22000054       0x2c ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
-                0x22000080                        . = ALIGN (0x8)
+ .noinit        0x2200001c       0x2c ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+                0x22000048                        . = ALIGN (0x8)
  *(.heap.*)
-                0x22000080                        __noinit_end = .
-                0x22000080                        . = .
-                0x22000080                        __nocache_pre_location = .
+                0x22000048                        __noinit_end = .
+                0x22000048                        . = .
+                0x22000048                        __nocache_pre_location = .
 
-.nocache        0x22000080        0x0
-                0x22000080                        __nocache_start = .
+.nocache        0x22000060        0x0
+                0x22000060                        __nocache_start = .
  *(.nocache)
-                0x22000080                        . = ALIGN (0x20)
-                0x22000080                        __nocache_end = .
-                0x22000080                        . = (SIZEOF (.nocache) > 0x0)?__nocache_end:__nocache_pre_location
+                0x22000060                        . = ALIGN (0x20)
+                0x22000060                        __nocache_end = .
+                0x22000048                        . = (SIZEOF (.nocache) > 0x0)?__nocache_end:__nocache_pre_location
 
-.bss            0x22000080    0xd63dc
+.bss            0x22000080    0x1b6dc
                 0x22000080                        . = ALIGN (0x4)
                 0x22000080                        __bss_start__ = .
  *(.bss*)
@@ -1709,83 +1710,83 @@ END GROUP
                 0x2200098c        0x4 ./src/mipi_dsi_ep.o
                 0x2200098c                g_phy_status
  *fill*         0x22000990       0x30 
- .bss           0x220009c0    0xd5800 ./ra_gen/common_data.o
+ .bss           0x220009c0    0x1ab00 ./ra_gen/common_data.o
                 0x220009c0                fb_foreground
  .bss.g_ioport_ctrl
-                0x220d61c0        0x8 ./ra_gen/common_data.o
-                0x220d61c0                g_ioport_ctrl
+                0x2201b4c0        0x8 ./ra_gen/common_data.o
+                0x2201b4c0                g_ioport_ctrl
  .bss.g_display_ctrl
-                0x220d61c8       0x10 ./ra_gen/common_data.o
-                0x220d61c8                g_display_ctrl
+                0x2201b4c8       0x10 ./ra_gen/common_data.o
+                0x2201b4c8                g_display_ctrl
  .bss.g_mipi_dsi0_ctrl
-                0x220d61d8       0x18 ./ra_gen/common_data.o
-                0x220d61d8                g_mipi_dsi0_ctrl
+                0x2201b4d8       0x18 ./ra_gen/common_data.o
+                0x2201b4d8                g_mipi_dsi0_ctrl
  .bss.g_mipi_phy0_ctrl
-                0x220d61f0        0x8 ./ra_gen/common_data.o
-                0x220d61f0                g_mipi_phy0_ctrl
+                0x2201b4f0        0x8 ./ra_gen/common_data.o
+                0x2201b4f0                g_mipi_phy0_ctrl
  .bss.g_external_irq_ctrl
-                0x220d61f8       0x10 ./ra_gen/common_data.o
-                0x220d61f8                g_external_irq_ctrl
+                0x2201b4f8       0x10 ./ra_gen/common_data.o
+                0x2201b4f8                g_external_irq_ctrl
  .bss.g_i2c_master_ctrl
-                0x220d6208       0x40 ./ra_gen/hal_data.o
-                0x220d6208                g_i2c_master_ctrl
+                0x2201b508       0x40 ./ra_gen/hal_data.o
+                0x2201b508                g_i2c_master_ctrl
  .bss.g_timer0_ctrl
-                0x220d6248       0x20 ./ra_gen/hal_data.o
-                0x220d6248                g_timer0_ctrl
+                0x2201b548       0x20 ./ra_gen/hal_data.o
+                0x2201b548                g_timer0_ctrl
  .bss.g_video_started
-                0x220d6268        0x1 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+                0x2201b568        0x1 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
  .bss.g_clock_state
-                0x220d6269        0x1 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- *fill*         0x220d626a        0x2 
+                0x2201b569        0x1 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ *fill*         0x2201b56a        0x2 
  .bss.g_frame_ctr
-                0x220d626c        0x4 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x2201b56c        0x4 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .bss.g_fade_pending
-                0x220d6270        0x8 ./ra/fsp/src/r_glcdc/r_glcdc.o
+                0x2201b570        0x8 ./ra/fsp/src/r_glcdc/r_glcdc.o
  .bss.g_ctrl_blk
-                0x220d6278        0xc ./ra/fsp/src/r_glcdc/r_glcdc.o
- *fill*         0x220d6284        0x4 
+                0x2201b578        0xc ./ra/fsp/src/r_glcdc/r_glcdc.o
+ *fill*         0x2201b584        0x4 
  .bss.g_bsp_group_irq_sources
-                0x220d6288       0x40 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
-                0x220d6288                g_bsp_group_irq_sources
+                0x2201b588       0x40 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+                0x2201b588                g_bsp_group_irq_sources
  .bss.g_protect_pfswe_counter
-                0x220d62c8        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
-                0x220d62c8                g_protect_pfswe_counter
- *fill*         0x220d62cc        0x4 
+                0x2201b5c8        0x4 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+                0x2201b5c8                g_protect_pfswe_counter
+ *fill*         0x2201b5cc        0x4 
  .bss.gp_renesas_isr_context
-                0x220d62d0      0x180 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
-                0x220d62d0                gp_renesas_isr_context
+                0x2201b5d0      0x180 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+                0x2201b5d0                gp_renesas_isr_context
  .bss.g_protect_counters
-                0x220d6450        0x8 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
-                0x220d6450                g_protect_counters
+                0x2201b750        0x8 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+                0x2201b750                g_protect_counters
  .bss.SystemCoreClock
-                0x220d6458        0x4 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
-                0x220d6458                SystemCoreClock
+                0x2201b758        0x4 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+                0x2201b758                SystemCoreClock
  *(COMMON)
-                0x220d645c                        . = ALIGN (0x4)
-                0x220d645c                        __bss_end__ = .
+                0x2201b75c                        . = ALIGN (0x4)
+                0x2201b75c                        __bss_end__ = .
 
-.heap           0x220d645c        0x4
-                0x220d6460                        . = ALIGN (0x8)
- *fill*         0x220d645c        0x4 
-                0x220d6460                        __HeapBase = .
+.heap           0x2201b75c        0x4
+                0x2201b760                        . = ALIGN (0x8)
+ *fill*         0x2201b75c        0x4 
+                0x2201b760                        __HeapBase = .
  *(.heap)
-                0x220d6460                        __HeapLimit = .
+                0x2201b760                        __HeapLimit = .
 
-.stack_dummy    0x220d6460      0x400
-                0x220d6460                        . = ALIGN (0x8)
-                0x220d6460                        __StackLimit = .
+.stack_dummy    0x2201b760      0x400
+                0x2201b760                        . = ALIGN (0x8)
+                0x2201b760                        __StackLimit = .
  *(.stack)
- .stack         0x220d6460      0x400 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
-                0x220d6860                        __StackTop = .
+ .stack         0x2201b760      0x400 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+                0x2201bb60                        __StackTop = .
  *(.stack*)
-                0x220d6860                        __StackTopAll = .
-                0x220d6860                        PROVIDE (__stack = __StackTopAll)
-                0x220d6860                        __RAM_segment_used_end__ = ALIGN (__StackTopAll, 0x4)
-                0x220d6c00                        __RAM_NSC_START = DEFINED (RAM_NSC_START)?ABSOLUTE ((RAM_NSC_START - RAM_NS_BUFFER_BLOCK_LENGTH)):__RESERVE_NS_RAM?ABSOLUTE (RAM_NS_BUFFER_BLOCK_START):ALIGN (__RAM_segment_used_end__, 0x400)
-                0x220d8000                        __tz_RAM_N = DEFINED (FLASH_BOOTLOADER_LENGTH)?((RAM_START + RAM_LENGTH) - RAM_APPLICATION_NS_LENGTH):DEFINED (RAM_NS_START)?ABSOLUTE ((RAM_NS_START - RAM_NS_BUFFER_BLOCK_LENGTH)):__RESERVE_NS_RAM?ABSOLUTE (RAM_NS_BUFFER_BLOCK_START):ALIGN (__RAM_NSC_START, 0x2000)
+                0x2201bb60                        __StackTopAll = .
+                0x2201bb60                        PROVIDE (__stack = __StackTopAll)
+                0x2201bb60                        __RAM_segment_used_end__ = ALIGN (__StackTopAll, 0x4)
+                0x2201bc00                        __RAM_NSC_START = DEFINED (RAM_NSC_START)?ABSOLUTE ((RAM_NSC_START - RAM_NS_BUFFER_BLOCK_LENGTH)):__RESERVE_NS_RAM?ABSOLUTE (RAM_NS_BUFFER_BLOCK_START):ALIGN (__RAM_segment_used_end__, 0x400)
+                0x2201c000                        __tz_RAM_N = DEFINED (FLASH_BOOTLOADER_LENGTH)?((RAM_START + RAM_LENGTH) - RAM_APPLICATION_NS_LENGTH):DEFINED (RAM_NS_START)?ABSOLUTE ((RAM_NS_START - RAM_NS_BUFFER_BLOCK_LENGTH)):__RESERVE_NS_RAM?ABSOLUTE (RAM_NS_BUFFER_BLOCK_START):ALIGN (__RAM_NSC_START, 0x2000)
 
-.ns_buffer      0x220d6860        0x0
-                0x220d6860                        . = __RESERVE_NS_RAM?ABSOLUTE ((RAM_NS_BUFFER_START & 0xffffffe0)):.
+.ns_buffer      0x2201bb60        0x0
+                0x2201bb60                        . = __RESERVE_NS_RAM?ABSOLUTE ((RAM_NS_BUFFER_START & 0xffffffe0)):.
  *(.ns_buffer*)
 
 .data_flash     0x27000000        0x0
@@ -2103,92 +2104,92 @@ LOAD linker stubs
  .comment       0x00000044       0x45 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
  .comment       0x00000044       0x45 ./ra/board/ra8d1_ek/board_init.o
 
-.debug_info     0x00000000    0x8b03c
+.debug_info     0x00000000    0x8b06a
  .debug_info    0x00000000     0x2399 ./src/SEGGER_RTT/SEGGER_RTT.o
  .debug_info    0x00002399      0x6f0 ./src/SEGGER_RTT/SEGGER_RTT_printf.o
- .debug_info    0x00002a89     0x14d9 ./src/graphics_rendering.o
- .debug_info    0x00003f62     0x88c1 ./src/gt911.o
- .debug_info    0x0000c823     0x12cd ./src/hal_entry.o
- .debug_info    0x0000daf0     0x76b1 ./src/mipi_dsi_ep.o
- .debug_info    0x000151a1     0x3719 ./ra_gen/common_data.o
- .debug_info    0x000188ba     0x58a9 ./ra_gen/hal_data.o
- .debug_info    0x0001e163       0xb0 ./ra_gen/main.o
- .debug_info    0x0001e213      0xa3c ./ra_gen/pin_data.o
- .debug_info    0x0001ec4f      0x9c9 ./ra_gen/vector_data.o
- .debug_info    0x0001f618     0x76c0 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_info    0x00026cd8    0x12513 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_info    0x000391eb     0xaadb ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_info    0x00043cc6     0xb9d9 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_info    0x0004f69f     0x2165 ./ra/fsp/src/r_icu/r_icu.o
- .debug_info    0x00051804     0xdc34 ./ra/fsp/src/r_gpt/r_gpt.o
- .debug_info    0x0005f438     0x78b1 ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_info    0x00066ce9     0x8cae ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_info    0x0006f997      0x955 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_info    0x000702ec      0x20c ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_info    0x000704f8     0x12e6 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_info    0x000717de       0xb1 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
- .debug_info    0x0007188f     0x1374 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_info    0x00072c03     0x68b3 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_info    0x000794b6      0x26a ./ra/fsp/src/bsp/mcu/all/bsp_rom_registers.o
- .debug_info    0x00079720     0x89d6 ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
- .debug_info    0x000820f6      0x167 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_info    0x0008225d     0x8d3b ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_info    0x0008af98       0xa4 ./ra/board/ra8d1_ek/board_init.o
+ .debug_info    0x00002a89     0x1509 ./src/graphics_rendering.o
+ .debug_info    0x00003f92     0x88c1 ./src/gt911.o
+ .debug_info    0x0000c853     0x12cd ./src/hal_entry.o
+ .debug_info    0x0000db20     0x76b1 ./src/mipi_dsi_ep.o
+ .debug_info    0x000151d1     0x3717 ./ra_gen/common_data.o
+ .debug_info    0x000188e8     0x58a9 ./ra_gen/hal_data.o
+ .debug_info    0x0001e191       0xb0 ./ra_gen/main.o
+ .debug_info    0x0001e241      0xa3c ./ra_gen/pin_data.o
+ .debug_info    0x0001ec7d      0x9c9 ./ra_gen/vector_data.o
+ .debug_info    0x0001f646     0x76c0 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_info    0x00026d06    0x12513 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_info    0x00039219     0xaadb ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_info    0x00043cf4     0xb9d9 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_info    0x0004f6cd     0x2165 ./ra/fsp/src/r_icu/r_icu.o
+ .debug_info    0x00051832     0xdc34 ./ra/fsp/src/r_gpt/r_gpt.o
+ .debug_info    0x0005f466     0x78b1 ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_info    0x00066d17     0x8cae ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_info    0x0006f9c5      0x955 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_info    0x0007031a      0x20c ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_info    0x00070526     0x12e6 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_info    0x0007180c       0xb1 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+ .debug_info    0x000718bd     0x1374 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_info    0x00072c31     0x68b3 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_info    0x000794e4      0x26a ./ra/fsp/src/bsp/mcu/all/bsp_rom_registers.o
+ .debug_info    0x0007974e     0x89d6 ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
+ .debug_info    0x00082124      0x167 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_info    0x0008228b     0x8d3b ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_info    0x0008afc6       0xa4 ./ra/board/ra8d1_ek/board_init.o
 
-.debug_abbrev   0x00000000     0x566c
+.debug_abbrev   0x00000000     0x5689
  .debug_abbrev  0x00000000      0x370 ./src/SEGGER_RTT/SEGGER_RTT.o
  .debug_abbrev  0x00000370      0x2af ./src/SEGGER_RTT/SEGGER_RTT_printf.o
- .debug_abbrev  0x0000061f      0x2b0 ./src/graphics_rendering.o
- .debug_abbrev  0x000008cf      0x49f ./src/gt911.o
- .debug_abbrev  0x00000d6e      0x194 ./src/hal_entry.o
- .debug_abbrev  0x00000f02      0x513 ./src/mipi_dsi_ep.o
- .debug_abbrev  0x00001415      0x309 ./ra_gen/common_data.o
- .debug_abbrev  0x0000171e      0x2bf ./ra_gen/hal_data.o
- .debug_abbrev  0x000019dd       0x64 ./ra_gen/main.o
- .debug_abbrev  0x00001a41      0x109 ./ra_gen/pin_data.o
- .debug_abbrev  0x00001b4a       0xba ./ra_gen/vector_data.o
- .debug_abbrev  0x00001c04      0x2ff ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_abbrev  0x00001f03      0x6e0 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_abbrev  0x000025e3      0x480 ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_abbrev  0x00002a63      0x635 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_abbrev  0x00003098      0x4bb ./ra/fsp/src/r_icu/r_icu.o
- .debug_abbrev  0x00003553      0x63d ./ra/fsp/src/r_gpt/r_gpt.o
- .debug_abbrev  0x00003b90      0x62a ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_abbrev  0x000041ba      0x3b2 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_abbrev  0x0000456c      0x183 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_abbrev  0x000046ef      0x10f ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_abbrev  0x000047fe      0x25d ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_abbrev  0x00004a5b       0x5e ./ra/fsp/src/bsp/mcu/all/bsp_io.o
- .debug_abbrev  0x00004ab9      0x1b6 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_abbrev  0x00004c6f      0x268 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_abbrev  0x00004ed7       0x4d ./ra/fsp/src/bsp/mcu/all/bsp_rom_registers.o
- .debug_abbrev  0x00004f24      0x26a ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
- .debug_abbrev  0x0000518e       0xf9 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_abbrev  0x00005287      0x389 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_abbrev  0x00005610       0x5c ./ra/board/ra8d1_ek/board_init.o
+ .debug_abbrev  0x0000061f      0x2c4 ./src/graphics_rendering.o
+ .debug_abbrev  0x000008e3      0x49f ./src/gt911.o
+ .debug_abbrev  0x00000d82      0x194 ./src/hal_entry.o
+ .debug_abbrev  0x00000f16      0x513 ./src/mipi_dsi_ep.o
+ .debug_abbrev  0x00001429      0x312 ./ra_gen/common_data.o
+ .debug_abbrev  0x0000173b      0x2bf ./ra_gen/hal_data.o
+ .debug_abbrev  0x000019fa       0x64 ./ra_gen/main.o
+ .debug_abbrev  0x00001a5e      0x109 ./ra_gen/pin_data.o
+ .debug_abbrev  0x00001b67       0xba ./ra_gen/vector_data.o
+ .debug_abbrev  0x00001c21      0x2ff ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_abbrev  0x00001f20      0x6e0 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_abbrev  0x00002600      0x480 ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_abbrev  0x00002a80      0x635 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_abbrev  0x000030b5      0x4bb ./ra/fsp/src/r_icu/r_icu.o
+ .debug_abbrev  0x00003570      0x63d ./ra/fsp/src/r_gpt/r_gpt.o
+ .debug_abbrev  0x00003bad      0x62a ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_abbrev  0x000041d7      0x3b2 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_abbrev  0x00004589      0x183 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_abbrev  0x0000470c      0x10f ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_abbrev  0x0000481b      0x25d ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_abbrev  0x00004a78       0x5e ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+ .debug_abbrev  0x00004ad6      0x1b6 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_abbrev  0x00004c8c      0x268 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_abbrev  0x00004ef4       0x4d ./ra/fsp/src/bsp/mcu/all/bsp_rom_registers.o
+ .debug_abbrev  0x00004f41      0x26a ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
+ .debug_abbrev  0x000051ab       0xf9 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_abbrev  0x000052a4      0x389 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_abbrev  0x0000562d       0x5c ./ra/board/ra8d1_ek/board_init.o
 
-.debug_loc      0x00000000     0xd17e
+.debug_loc      0x00000000     0xd11b
  .debug_loc     0x00000000     0x2eed ./src/SEGGER_RTT/SEGGER_RTT.o
  .debug_loc     0x00002eed      0x968 ./src/SEGGER_RTT/SEGGER_RTT_printf.o
- .debug_loc     0x00003855      0x2f2 ./src/graphics_rendering.o
- .debug_loc     0x00003b47      0x654 ./src/gt911.o
- .debug_loc     0x0000419b       0x2b ./src/hal_entry.o
- .debug_loc     0x000041c6      0x4dd ./src/mipi_dsi_ep.o
- .debug_loc     0x000046a3      0x169 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_loc     0x0000480c     0x1e65 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_loc     0x00006671      0xbe8 ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_loc     0x00007259     0x1920 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_loc     0x00008b79      0x535 ./ra/fsp/src/r_icu/r_icu.o
- .debug_loc     0x000090ae     0x1370 ./ra/fsp/src/r_gpt/r_gpt.o
- .debug_loc     0x0000a41e     0x202d ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_loc     0x0000c44b      0x767 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_loc     0x0000cbb2       0x22 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_loc     0x0000cbd4      0x26b ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_loc     0x0000ce3f       0xb1 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_loc     0x0000cef0       0x23 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_loc     0x0000cf13      0x10b ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_loc     0x0000d01e       0x52 ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
- .debug_loc     0x0000d070      0x10e ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_loc     0x00003855      0x28f ./src/graphics_rendering.o
+ .debug_loc     0x00003ae4      0x654 ./src/gt911.o
+ .debug_loc     0x00004138       0x2b ./src/hal_entry.o
+ .debug_loc     0x00004163      0x4dd ./src/mipi_dsi_ep.o
+ .debug_loc     0x00004640      0x169 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_loc     0x000047a9     0x1e65 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_loc     0x0000660e      0xbe8 ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_loc     0x000071f6     0x1920 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_loc     0x00008b16      0x535 ./ra/fsp/src/r_icu/r_icu.o
+ .debug_loc     0x0000904b     0x1370 ./ra/fsp/src/r_gpt/r_gpt.o
+ .debug_loc     0x0000a3bb     0x202d ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_loc     0x0000c3e8      0x767 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_loc     0x0000cb4f       0x22 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_loc     0x0000cb71      0x26b ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_loc     0x0000cddc       0xb1 ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_loc     0x0000ce8d       0x23 ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_loc     0x0000ceb0      0x10b ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_loc     0x0000cfbb       0x52 ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
+ .debug_loc     0x0000d00d      0x10e ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
 
 .debug_aranges  0x00000000      0x888
  .debug_aranges
@@ -2280,70 +2281,70 @@ LOAD linker stubs
  .debug_ranges  0x00002878       0x98 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
  .debug_ranges  0x00002910       0x10 ./ra/board/ra8d1_ek/board_init.o
 
-.debug_line     0x00000000     0xf4c3
+.debug_line     0x00000000     0xf5a0
  .debug_line    0x00000000     0x17ce ./src/SEGGER_RTT/SEGGER_RTT.o
  .debug_line    0x000017ce      0x7a4 ./src/SEGGER_RTT/SEGGER_RTT_printf.o
- .debug_line    0x00001f72      0x596 ./src/graphics_rendering.o
- .debug_line    0x00002508      0x878 ./src/gt911.o
- .debug_line    0x00002d80      0x350 ./src/hal_entry.o
- .debug_line    0x000030d0      0x952 ./src/mipi_dsi_ep.o
- .debug_line    0x00003a22      0x383 ./ra_gen/common_data.o
- .debug_line    0x00003da5      0x36f ./ra_gen/hal_data.o
- .debug_line    0x00004114       0x5e ./ra_gen/main.o
- .debug_line    0x00004172      0x254 ./ra_gen/pin_data.o
- .debug_line    0x000043c6      0x174 ./ra_gen/vector_data.o
- .debug_line    0x0000453a      0x505 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_line    0x00004a3f     0x1db2 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_line    0x000067f1      0xbfb ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_line    0x000073ec     0x1a79 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_line    0x00008e65      0x867 ./ra/fsp/src/r_icu/r_icu.o
- .debug_line    0x000096cc     0x127a ./ra/fsp/src/r_gpt/r_gpt.o
- .debug_line    0x0000a946     0x1aba ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_line    0x0000c400      0xe2a ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_line    0x0000d22a      0x2cd ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_line    0x0000d4f7      0x307 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_line    0x0000d7fe      0x3cb ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_line    0x0000dbc9      0x194 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
- .debug_line    0x0000dd5d      0x2fa ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_line    0x0000e057      0x404 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_line    0x0000e45b      0x137 ./ra/fsp/src/bsp/mcu/all/bsp_rom_registers.o
- .debug_line    0x0000e592      0x497 ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
- .debug_line    0x0000ea29      0x200 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_line    0x0000ec29      0x840 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_line    0x0000f469       0x5a ./ra/board/ra8d1_ek/board_init.o
+ .debug_line    0x00001f72      0x673 ./src/graphics_rendering.o
+ .debug_line    0x000025e5      0x878 ./src/gt911.o
+ .debug_line    0x00002e5d      0x350 ./src/hal_entry.o
+ .debug_line    0x000031ad      0x952 ./src/mipi_dsi_ep.o
+ .debug_line    0x00003aff      0x383 ./ra_gen/common_data.o
+ .debug_line    0x00003e82      0x36f ./ra_gen/hal_data.o
+ .debug_line    0x000041f1       0x5e ./ra_gen/main.o
+ .debug_line    0x0000424f      0x254 ./ra_gen/pin_data.o
+ .debug_line    0x000044a3      0x174 ./ra_gen/vector_data.o
+ .debug_line    0x00004617      0x505 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_line    0x00004b1c     0x1db2 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_line    0x000068ce      0xbfb ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_line    0x000074c9     0x1a79 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_line    0x00008f42      0x867 ./ra/fsp/src/r_icu/r_icu.o
+ .debug_line    0x000097a9     0x127a ./ra/fsp/src/r_gpt/r_gpt.o
+ .debug_line    0x0000aa23     0x1aba ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_line    0x0000c4dd      0xe2a ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_line    0x0000d307      0x2cd ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_line    0x0000d5d4      0x307 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_line    0x0000d8db      0x3cb ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_line    0x0000dca6      0x194 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+ .debug_line    0x0000de3a      0x2fa ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_line    0x0000e134      0x404 ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_line    0x0000e538      0x137 ./ra/fsp/src/bsp/mcu/all/bsp_rom_registers.o
+ .debug_line    0x0000e66f      0x497 ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
+ .debug_line    0x0000eb06      0x200 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_line    0x0000ed06      0x840 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_line    0x0000f546       0x5a ./ra/board/ra8d1_ek/board_init.o
 
-.debug_str      0x00000000    0x17ab3
- .debug_str     0x00000000    0x17ab3 ./src/SEGGER_RTT/SEGGER_RTT.o
+.debug_str      0x00000000    0x17aa3
+ .debug_str     0x00000000    0x17aa3 ./src/SEGGER_RTT/SEGGER_RTT.o
                                 0x71a (size before relaxing)
- .debug_str     0x00017ab3      0x32a ./src/SEGGER_RTT/SEGGER_RTT_printf.o
- .debug_str     0x00017ab3     0x26ef ./src/graphics_rendering.o
- .debug_str     0x00017ab3     0x4ea0 ./src/gt911.o
- .debug_str     0x00017ab3     0x33d7 ./src/hal_entry.o
- .debug_str     0x00017ab3     0x7e6f ./src/mipi_dsi_ep.o
- .debug_str     0x00017ab3     0x69d1 ./ra_gen/common_data.o
- .debug_str     0x00017ab3     0x4e23 ./ra_gen/hal_data.o
- .debug_str     0x00017ab3      0x1ea ./ra_gen/main.o
- .debug_str     0x00017ab3     0x1da3 ./ra_gen/pin_data.o
- .debug_str     0x00017ab3     0x2229 ./ra_gen/vector_data.o
- .debug_str     0x00017ab3     0x44f3 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
- .debug_str     0x00017ab3     0x83c0 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
- .debug_str     0x00017ab3     0x6943 ./ra/fsp/src/r_ioport/r_ioport.o
- .debug_str     0x00017ab3     0x5d09 ./ra/fsp/src/r_iic_master/r_iic_master.o
- .debug_str     0x00017ab3     0x2601 ./ra/fsp/src/r_icu/r_icu.o
- .debug_str     0x00017ab3     0x7b1e ./ra/fsp/src/r_gpt/r_gpt.o
- .debug_str     0x00017ab3     0x67b8 ./ra/fsp/src/r_glcdc/r_glcdc.o
- .debug_str     0x00017ab3     0x3587 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
- .debug_str     0x00017ab3     0x1c37 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
- .debug_str     0x00017ab3      0x334 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
- .debug_str     0x00017ab3     0x208c ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
- .debug_str     0x00017ab3      0x213 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
- .debug_str     0x00017ab3     0x256c ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
- .debug_str     0x00017ab3     0x284b ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
- .debug_str     0x00017ab3      0x3e9 ./ra/fsp/src/bsp/mcu/all/bsp_rom_registers.o
- .debug_str     0x00017ab3     0x2f3c ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
- .debug_str     0x00017ab3      0x27b ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
- .debug_str     0x00017ab3     0x3778 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
- .debug_str     0x00017ab3      0x1f6 ./ra/board/ra8d1_ek/board_init.o
+ .debug_str     0x00017aa3      0x32a ./src/SEGGER_RTT/SEGGER_RTT_printf.o
+ .debug_str     0x00017aa3     0x26eb ./src/graphics_rendering.o
+ .debug_str     0x00017aa3     0x4ea0 ./src/gt911.o
+ .debug_str     0x00017aa3     0x33d7 ./src/hal_entry.o
+ .debug_str     0x00017aa3     0x7e6f ./src/mipi_dsi_ep.o
+ .debug_str     0x00017aa3     0x69d1 ./ra_gen/common_data.o
+ .debug_str     0x00017aa3     0x4e23 ./ra_gen/hal_data.o
+ .debug_str     0x00017aa3      0x1ea ./ra_gen/main.o
+ .debug_str     0x00017aa3     0x1da3 ./ra_gen/pin_data.o
+ .debug_str     0x00017aa3     0x2229 ./ra_gen/vector_data.o
+ .debug_str     0x00017aa3     0x44f3 ./ra/fsp/src/r_mipi_phy/r_mipi_phy.o
+ .debug_str     0x00017aa3     0x83c0 ./ra/fsp/src/r_mipi_dsi/r_mipi_dsi.o
+ .debug_str     0x00017aa3     0x6943 ./ra/fsp/src/r_ioport/r_ioport.o
+ .debug_str     0x00017aa3     0x5d09 ./ra/fsp/src/r_iic_master/r_iic_master.o
+ .debug_str     0x00017aa3     0x2601 ./ra/fsp/src/r_icu/r_icu.o
+ .debug_str     0x00017aa3     0x7b1e ./ra/fsp/src/r_gpt/r_gpt.o
+ .debug_str     0x00017aa3     0x67b8 ./ra/fsp/src/r_glcdc/r_glcdc.o
+ .debug_str     0x00017aa3     0x3587 ./ra/fsp/src/bsp/mcu/all/bsp_clocks.o
+ .debug_str     0x00017aa3     0x1c37 ./ra/fsp/src/bsp/mcu/all/bsp_common.o
+ .debug_str     0x00017aa3      0x334 ./ra/fsp/src/bsp/mcu/all/bsp_delay.o
+ .debug_str     0x00017aa3     0x208c ./ra/fsp/src/bsp/mcu/all/bsp_group_irq.o
+ .debug_str     0x00017aa3      0x213 ./ra/fsp/src/bsp/mcu/all/bsp_io.o
+ .debug_str     0x00017aa3     0x256c ./ra/fsp/src/bsp/mcu/all/bsp_irq.o
+ .debug_str     0x00017aa3     0x284b ./ra/fsp/src/bsp/mcu/all/bsp_register_protection.o
+ .debug_str     0x00017aa3      0x3e9 ./ra/fsp/src/bsp/mcu/all/bsp_rom_registers.o
+ .debug_str     0x00017aa3     0x2f3c ./ra/fsp/src/bsp/mcu/all/bsp_sdram.o
+ .debug_str     0x00017aa3      0x27b ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.o
+ .debug_str     0x00017aa3     0x3778 ./ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.o
+ .debug_str     0x00017aa3      0x1f6 ./ra/board/ra8d1_ek/board_init.o
 
 .debug_frame    0x00000000     0x1588
  .debug_frame   0x00000000      0x434 ./src/SEGGER_RTT/SEGGER_RTT.o

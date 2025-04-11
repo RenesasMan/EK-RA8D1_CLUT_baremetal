@@ -12,7 +12,7 @@
 /* User defined functions */
 static void display_draw_rgb565 (uint32_t * framebuffer);
 static void display_clear_rgb565 (uint32_t * framebuffer);
-static void display_draw_clut8 (uint8_t * framebuffer);
+static void display_draw_clut (uint8_t * framebuffer);
 
 
 void CLUT_init(void);
@@ -79,8 +79,8 @@ uint32_t clut_4[16] =
 
 uint32_t clut_1[2] =
 {
-     CLUT_CYAN,                    // Cyan
-     CLUT_GREEN,                    // Green
+ CLUT_RED,
+     CLUT_PURPLE,
 };
 
 
@@ -124,8 +124,10 @@ void CLUT_init(void)
         __BKPT();
     }
 
+    memset(&fb_foreground, 0xff, sizeof(fb_foreground));
 
-    display_draw_clut8(&fb_foreground);
+
+    display_draw_clut(&fb_foreground);
 }
 
 void RGB_init(void)
@@ -197,12 +199,10 @@ static void display_clear_rgb565 (uint32_t * framebuffer)
  * @param[in]  framebuffer    Pointer to frame buffer.
  * @retval     None.
  **********************************************************************************************************************/
-static void display_draw_clut8 (uint8_t * framebuffer)
+static void display_draw_clut (uint8_t * framebuffer)
 {
     /* Draw buffer */
-
-    uint8_t bit_width = (uint8_t)(g_vr_size1 / COLOR_BAND_COUNT_CLUT);
-    uint16_t gap_width = g_vr_size1 - ( COLOR_BAND_COUNT_CLUT * (uint8_t)bit_width);
+    uint16_t bit_width = (uint16_t)(g_vr_size1 / COLOR_BAND_COUNT_CLUT);
     volatile uint8_t bit       = 0;
 
     for (uint32_t y = 0; y < g_vr_size1; y++)
@@ -217,7 +217,14 @@ static void display_draw_clut8 (uint8_t * framebuffer)
 #elif CLUT_MODE == CLUT4
         bit = ((y)/bit_width)<<4 | ((y)/bit_width);
 #elif CLUT_MODE == CLUT1
-
+        if( 0 == y/bit_width)
+        {
+            bit = 0x00u;
+        }
+        else
+        {
+            bit = 0xFFu;
+        }
 #endif
 //        bit = 1;
 

@@ -88,18 +88,18 @@ void glcdc_callback(display_callback_args_t *p_args);
             extern uint8_t fb_background[2][DISPLAY_BUFFER_STRIDE_BYTES_INPUT0 * DISPLAY_VSIZE_INPUT0];
             #endif
 
-#define DISPLAY_IN_FORMAT_CLUT8_1
+#define DISPLAY_IN_FORMAT_CLUT1_1
 #if defined (DISPLAY_IN_FORMAT_32BITS_RGB888_1) || defined (DISPLAY_IN_FORMAT_32BITS_ARGB8888_1)
             #define DISPLAY_BITS_PER_PIXEL_INPUT1 (32)
             #elif defined (DISPLAY_IN_FORMAT_16BITS_RGB565_1) || defined (DISPLAY_IN_FORMAT_16BITS_ARGB1555_1) || defined (DISPLAY_IN_FORMAT_16BITS_ARGB4444_1)
             #define DISPLAY_BITS_PER_PIXEL_INPUT1 (16)
             #elif defined (DISPLAY_IN_FORMAT_CLUT8_1)
-#define DISPLAY_BITS_PER_PIXEL_INPUT1 (8)
-#elif defined (DISPLAY_IN_FORMAT_CLUT4_1)
+            #define DISPLAY_BITS_PER_PIXEL_INPUT1 (8)
+            #elif defined (DISPLAY_IN_FORMAT_CLUT4_1)
             #define DISPLAY_BITS_PER_PIXEL_INPUT1 (4)
             #else
-            #define DISPLAY_BITS_PER_PIXEL_INPUT1 (1)
-            #endif
+#define DISPLAY_BITS_PER_PIXEL_INPUT1 (1)
+#endif
 #define DISPLAY_HSIZE_INPUT1                 (480)
 #define DISPLAY_VSIZE_INPUT1                 (854)
 #define DISPLAY_BUFFER_STRIDE_BYTES_INPUT1   (((DISPLAY_HSIZE_INPUT1 * DISPLAY_BITS_PER_PIXEL_INPUT1 + 0x1FF) >> 9) << 6)
