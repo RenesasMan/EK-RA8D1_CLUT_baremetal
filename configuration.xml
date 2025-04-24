@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<raConfiguration version="10">
+<raConfiguration version="11">
   <generalSettings>
     <option key="#Board#" value="board.ra8d1ek"/>
     <option key="CPU" value="RA8D1"/>
@@ -286,6 +286,7 @@
   </raComponentSelection>
   <raElcConfiguration/>
   <raIcuConfiguration/>
+  <raLinkMapConfiguration/>
   <raModuleConfiguration>
     <module id="module.driver.ioport_on_ioport.0">
       <property id="module.driver.ioport.name" value="g_ioport"/>
@@ -323,7 +324,7 @@
       <property id="module.driver.display.input1.buffer_name" value="fb_foreground"/>
       <property id="module.driver.display.input1.buffer_number" value="2"/>
       <property id="module.driver.display.input1.section" value=".bss"/>
-      <property id="module.driver.display.input1.format" value="module.driver.display.input1.format.in_format_clut1"/>
+      <property id="module.driver.display.input1.format" value="module.driver.display.input1.format.in_format_clut8"/>
       <property id="module.driver.display.input1.line_descending_enable" value="module.driver.display.input1.line_descending_enable.false"/>
       <property id="module.driver.display.input1.lines_repeat_enable" value="module.driver.display.input1.lines_repeat_enable.false"/>
       <property id="module.driver.display.input1.lines_repeat_times" value="0"/>

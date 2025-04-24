@@ -8,6 +8,8 @@
 #ifndef GRAPHICS_RENDERING_H_
 #define GRAPHICS_RENDERING_H_
 
+#include "common_data.h"
+
 #define CLUT8 1U
 #define CLUT4 2U
 #define CLUT1 3U
