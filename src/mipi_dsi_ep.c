@@ -37,7 +37,6 @@
 /* User defined functions */
 void handle_error (fsp_err_t err,  const char * err_str);
 void touch_screen_reset(void);
-static fsp_err_t wait_for_mipi_dsi_event (mipi_dsi_phy_status_t event);
 
 
 
@@ -319,21 +318,7 @@ void touch_screen_reset(void)
 
 }
 
-/*******************************************************************************************************************//**
- * @brief       This function is used to Wait for mipi dsi event.
- *
- * @param[in]   event   : Expected events
- * @retval      FSP_SUCCESS : Upon successful operation, otherwise: failed
- **********************************************************************************************************************/
-static fsp_err_t wait_for_mipi_dsi_event (mipi_dsi_phy_status_t event)
-{
-    uint32_t timeout = R_FSP_SystemClockHzGet(FSP_PRIV_CLOCK_ICLK) / 10;
-    while (timeout-- && ((g_phy_status & event) != event))
-    {
-        ;
-    }
-    return timeout ? FSP_SUCCESS : FSP_ERR_TIMEOUT;
-}
+
 /*******************************************************************************************************************//**
  *  @brief       This function handles errors, closes all opened modules, and prints errors.
  *

@@ -7,6 +7,8 @@
 
 #include "graphics_rendering.h"
 #include "common_utils.h"
+#include "common_data.h"
+#include "stdint.h"
 
 
 /* User defined functions */
@@ -127,7 +129,7 @@ void CLUT_init(void)
     memset(&fb_foreground, 0xff, sizeof(fb_foreground));
 
 
-    display_draw_clut(&fb_foreground);
+    display_draw_clut( (void *) &fb_foreground);
 }
 
 void RGB_init(void)
@@ -209,7 +211,7 @@ static void display_draw_clut (uint8_t * framebuffer)
     {
         bit = 0;
 #if CLUT_MODE == CLUT8
-        bit = y / (uint8_t)bit_width;
+        bit = (uint8_t)(y / bit_width);
         if( bit > COLOR_BAND_COUNT_CLUT ) //overflow protection
         {
             bit = COLOR_BAND_COUNT_CLUT;
