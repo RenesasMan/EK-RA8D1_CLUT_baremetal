@@ -15,7 +15,6 @@
 
 /* User defined functions */
 static void display_draw_rgb565 (uint32_t * framebuffer);
-static void display_clear_rgb565 (uint32_t * framebuffer);
 static void display_draw_clut (uint8_t * framebuffer);
 
 
@@ -150,7 +149,7 @@ void CLUT_init(void)
 
     timer_ms_decimal = ((timer_count_after - timer_count_before)%10)*100 + ((timer_count_reg_after - timer_count_reg_before)*100)/g_time_counter.p_cfg->period_counts;
 
-    APP_PRINT("\r\nCLUT Draw Time: %u.%u ms\r\n", (timer_count_after - timer_count_before)/10, timer_ms_decimal );
+    APP_PRINT("\r\nCLUT Draw Time: %u.%u ms\tFrame Buffer Size: %u Bytes\r\n", (timer_count_after - timer_count_before)/10, timer_ms_decimal, sizeof(fb_foreground) );
 
     TimeCounter_Start();
 }
@@ -188,7 +187,7 @@ void RGB_init(void)
 
     timer_ms_decimal = ((timer_count_after - timer_count_before)%10)*100 + ((timer_count_reg_after - timer_count_reg_before)*100)/g_time_counter.p_cfg->period_counts;
 
-    APP_PRINT("\r\nRGB565 Draw Time: %u.%u ms\r\n", (timer_count_after - timer_count_before)/10, timer_ms_decimal );
+    APP_PRINT("\r\nRGB565 Draw Time: %u.%u ms\tFrame Buffer Size: %u Bytes\r\n", (timer_count_after - timer_count_before)/10, timer_ms_decimal, sizeof(fb_background) );
 
     TimeCounter_Start();
 
@@ -219,20 +218,6 @@ static void display_draw_rgb565 (uint32_t * framebuffer)
     }
 }
 
-
-static void display_clear_rgb565 (uint32_t * framebuffer)
-{
-    /* Draw buffer */
-
-    for (uint32_t y = 0; y < g_vr_size; y++)
-    {
-        for (uint32_t x = 0; x < g_hz_size; x ++)
-        {
-            framebuffer[x] = BLACK;
-        }
-        framebuffer += g_hstride;
-    }
-}
 
 /*******************************************************************************************************************//**
  * @brief      User-defined function to draw the current display to a framebuffer.
