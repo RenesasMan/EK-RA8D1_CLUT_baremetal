@@ -10,14 +10,14 @@
 #include "r_i2c_master_api.h"
 FSP_HEADER
 /** Timer on GPT Instance. */
-extern const timer_instance_t g_timer0;
+extern const timer_instance_t g_time_counter;
 
 /** Access the GPT instance using these structures when calling API functions directly (::p_api is not used). */
-extern gpt_instance_ctrl_t g_timer0_ctrl;
-extern const timer_cfg_t g_timer0_cfg;
+extern gpt_instance_ctrl_t g_time_counter_ctrl;
+extern const timer_cfg_t g_time_counter_cfg;
 
-#ifndef gpt_callback
-void gpt_callback(timer_callback_args_t *p_args);
+#ifndef time_counter_callback
+void time_counter_callback(timer_callback_args_t *p_args);
 #endif
 /* I2C Master on IIC Instance. */
 extern const i2c_master_instance_t g_i2c_master;

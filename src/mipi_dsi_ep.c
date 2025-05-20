@@ -25,6 +25,7 @@
 #include "r_mipi_dsi.h"
 #include "hal_data.h"
 #include "common_utils.h"
+#include "r_gpt.h"
 
 
 
@@ -243,10 +244,8 @@ void mipi_dsi_start_display(void)
 {
     fsp_err_t err = FSP_SUCCESS;
 
-
-
     /* Get timer information */
-    err = R_GPT_InfoGet (&g_timer0_ctrl, &timer_info);
+    err = R_GPT_InfoGet (&g_time_counter_ctrl, &timer_info);
     /* Handle error */
     handle_error(err, "** GPT InfoGet API failed ** \r\n");
 
@@ -260,13 +259,7 @@ void mipi_dsi_start_display(void)
     /* Handle error */
     handle_error(err, "** ICU ExternalIrqEnable API failed ** \r\n");
 
-
-
 }
-
-
-
-
 
 
 
@@ -283,9 +276,6 @@ void external_irq_callback(external_irq_callback_args_t *p_args)
         g_irq_state =true;
     }
 }
-
-
-
 
 
 /*******************************************************************************************************************//**
@@ -334,9 +324,9 @@ void handle_error (fsp_err_t err,  const char * err_str)
         APP_ERR_PRINT(err_str);
 
         /* Close opened GPT module*/
-        if(RESET_VALUE != g_timer0_ctrl.open)
+        if(RESET_VALUE != g_time_counter_ctrl.open)
         {
-            if(FSP_SUCCESS != R_GPT_Close (&g_timer0_ctrl))
+            if(FSP_SUCCESS != R_GPT_Close (&g_time_counter_ctrl))
             {
                 APP_ERR_PRINT("GPT Close API failed\r\n");
             }
@@ -419,21 +409,6 @@ void mipi_dsi_callback(mipi_dsi_callback_args_t *p_args)
 }
 
 /*******************************************************************************************************************//**
- * @brief      Callback functions for gpt interrupts
- *
- * @param[in]  p_args    Callback arguments
- * @retval     none
- **********************************************************************************************************************/
-void gpt_callback(timer_callback_args_t *p_args)
-{
-    /* Check for the event */
-    if (TIMER_EVENT_CYCLE_END == p_args->event)
-    {
-        g_timer_overflow = SET_FLAG;
-    }
-}
-
-/*******************************************************************************************************************//**
  * @brief      This function is used initialize related module and start display operation.
  *
  * @param[in]  none
@@ -442,18 +417,10 @@ void gpt_callback(timer_callback_args_t *p_args)
 void mipi_dsi_entry(void)
 {
     fsp_err_t          err        = FSP_SUCCESS;
-    fsp_pack_version_t version    = {RESET_VALUE};
 
-    /* version get API for FLEX pack information */
-    R_FSP_VersionGet(&version);
-
-    /* Project information printed on the Console */
-    APP_PRINT(BANNER_INFO, EP_VERSION, version.version_id_b.major, version.version_id_b.minor, version.version_id_b.patch);
-    APP_PRINT(EP_INFO);
-    APP_PRINT(MIPI_DSI_MENU);
-
-    /* Initialize SDRAM. */
-    bsp_sdram_init();
+    //If SDRAM is not previously init, then uncomment the following line:
+//    /* Initialize SDRAM. */
+//    bsp_sdram_init();
 
     /* Initialize GLCDC module */
     err = R_GLCDC_Open(&g_display_ctrl, &g_display_cfg);
@@ -461,7 +428,7 @@ void mipi_dsi_entry(void)
     handle_error(err, "** GLCDC driver initialization FAILED ** \r\n");
 
     /* Initialize GPT module */
-    err = R_GPT_Open(&g_timer0_ctrl, &g_timer0_cfg);
+    err = R_GPT_Open(&g_time_counter_ctrl, &g_time_counter_cfg);
     /* Handle error */
     handle_error(err, "** R_GPT_Open API failed ** \r\n");
 

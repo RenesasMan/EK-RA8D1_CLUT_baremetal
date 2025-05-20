@@ -9,6 +9,8 @@
 #include "common_utils.h"
 #include "common_data.h"
 #include "stdint.h"
+#include "SEGGER_RTT/SEGGER_RTT.h"
+#include "time_counter/time_counter.h"
 
 
 /* User defined functions */
@@ -27,6 +29,8 @@ uint32_t g_buffer_size, g_hstride;
 uint32_t * gp_single_buffer = NULL;
 uint32_t * gp_double_buffer = NULL;
 uint32_t * gp_frame_buffer  = NULL;
+
+//uint32_t timer_top = &g_time_counter.p_cfg->period_counts;
 
 
 /* Variables to store resolution information */
@@ -106,10 +110,17 @@ display_clut_cfg_t clut_cfg =
 };
 
 
+/*******************************************************************************************************************//**
+ * @brief
+ *
+ * @param[in]  [param in]
+ * @retval     [return value]
+ **********************************************************************************************************************/
 void CLUT_init(void)
 {
     fsp_err_t err;
-
+    volatile uint32_t timer_count_before, timer_count_reg_before, timer_count_after, timer_count_reg_after;
+    volatile uint32_t timer_ms_decimal = 0;
 
     //CLUT Setup
     /* Get LCDC configuration */
@@ -126,14 +137,29 @@ void CLUT_init(void)
         __BKPT();
     }
 
-    memset(&fb_foreground, 0xff, sizeof(fb_foreground));
-
+    TimeCounter_CountReset();
+    timer_count_before = TimeCounter_CurrentCountGet();
+    timer_count_reg_before = TimeCounter_CurrentCountRegGet();
 
     display_draw_clut( (void *) &fb_foreground);
+
+    TimeCounter_Stop();
+
+    timer_count_after = TimeCounter_CurrentCountGet();
+    timer_count_reg_after = TimeCounter_CurrentCountRegGet();
+
+    timer_ms_decimal = ((timer_count_after - timer_count_before)%10)*100 + ((timer_count_reg_after - timer_count_reg_before)*100)/g_time_counter.p_cfg->period_counts;
+
+    APP_PRINT("\r\nCLUT Draw Time: %u.%u ms\r\n", (timer_count_after - timer_count_before)/10, timer_ms_decimal );
+
+    TimeCounter_Start();
 }
 
 void RGB_init(void)
 {
+    volatile uint32_t timer_count_before, timer_count_reg_before, timer_count_after, timer_count_reg_after;
+    volatile uint32_t timer_ms_decimal = 0;
+
     /* Get LCDC configuration */
     g_hz_size = (g_display_cfg.input[0].hsize);
     g_vr_size = (g_display_cfg.input[0].vsize);
@@ -146,12 +172,25 @@ void RGB_init(void)
     /* Double buffer for drawing color bands with good quality */
     gp_double_buffer = gp_single_buffer + g_buffer_size;
 
+    TimeCounter_Stop();
+    TimeCounter_CountReset();
+    timer_count_before = TimeCounter_CurrentCountGet();
+    timer_count_reg_before = TimeCounter_CurrentCountRegGet();
 
-    display_clear_rgb565 (gp_single_buffer);
-    display_clear_rgb565 (gp_double_buffer);
 
     /* Display color bands on LCD screen */
-    display_draw_rgb565 (gp_single_buffer);
+    display_draw_rgb565( (void *) &fb_background);
+
+    TimeCounter_Stop();
+
+    timer_count_after = TimeCounter_CurrentCountGet();
+    timer_count_reg_after = TimeCounter_CurrentCountRegGet();
+
+    timer_ms_decimal = ((timer_count_after - timer_count_before)%10)*100 + ((timer_count_reg_after - timer_count_reg_before)*100)/g_time_counter.p_cfg->period_counts;
+
+    APP_PRINT("\r\nRGB565 Draw Time: %u.%u ms\r\n", (timer_count_after - timer_count_before)/10, timer_ms_decimal );
+
+    TimeCounter_Start();
 
 }
 
@@ -228,7 +267,6 @@ static void display_draw_clut (uint8_t * framebuffer)
             bit = 0xFFu;
         }
 #endif
-//        bit = 1;
 
         for (uint32_t x = 0; x < g_hz_size1; x++)
         {

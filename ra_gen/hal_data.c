@@ -1,9 +1,9 @@
 /* generated HAL source file - do not edit */
 #include "hal_data.h"
 
-gpt_instance_ctrl_t g_timer0_ctrl;
+gpt_instance_ctrl_t g_time_counter_ctrl;
 #if 0
-const gpt_extended_pwm_cfg_t g_timer0_pwm_extend =
+const gpt_extended_pwm_cfg_t g_time_counter_pwm_extend =
 {
     .trough_ipl          = (BSP_IRQ_DISABLED),
 #if defined(VECTOR_NUMBER_GPT0_COUNTER_UNDERFLOW)
@@ -25,7 +25,7 @@ const gpt_extended_pwm_cfg_t g_timer0_pwm_extend =
     .gtiocb_disable_setting = GPT_GTIOC_DISABLE_PROHIBITED,
 };
 #endif
-const gpt_extended_cfg_t g_timer0_extend =
+const gpt_extended_cfg_t g_time_counter_extend =
         { .gtioca =
         { .output_enabled = false, .stop_level = GPT_PIN_LEVEL_LOW },
           .gtiocb =
@@ -51,7 +51,7 @@ const gpt_extended_cfg_t g_timer0_extend =
           .compare_match_status = (0U << 1U) | 0U, .capture_filter_gtioca = GPT_CAPTURE_FILTER_NONE, .capture_filter_gtiocb =
                   GPT_CAPTURE_FILTER_NONE,
 #if 0
-    .p_pwm_cfg                   = &g_timer0_pwm_extend,
+    .p_pwm_cfg                   = &g_time_counter_pwm_extend,
 #else
           .p_pwm_cfg = NULL,
 #endif
@@ -75,17 +75,17 @@ const gpt_extended_cfg_t g_timer0_extend =
 #endif
         };
 
-const timer_cfg_t g_timer0_cfg =
+const timer_cfg_t g_time_counter_cfg =
 { .mode = TIMER_MODE_PERIODIC,
-/* Actual period: 0.0005461333333333333 seconds. Actual duty: 50%. */.period_counts = (uint32_t) 0x10000,
-  .duty_cycle_counts = 0x8000, .source_div = (timer_source_div_t) 0, .channel = 0, .p_callback = gpt_callback,
+/* Actual period: 0.0001 seconds. Actual duty: 50%. */.period_counts = (uint32_t) 0x2ee0,
+  .duty_cycle_counts = 0x1770, .source_div = (timer_source_div_t) 0, .channel = 0, .p_callback = time_counter_callback,
   /** If NULL then do not add & */
 #if defined(NULL)
     .p_context           = NULL,
 #else
   .p_context = &NULL,
 #endif
-  .p_extend = &g_timer0_extend,
+  .p_extend = &g_time_counter_extend,
   .cycle_end_ipl = (1),
 #if defined(VECTOR_NUMBER_GPT0_COUNTER_OVERFLOW)
     .cycle_end_irq       = VECTOR_NUMBER_GPT0_COUNTER_OVERFLOW,
@@ -94,8 +94,8 @@ const timer_cfg_t g_timer0_cfg =
 #endif
         };
 /* Instance structure to use this module. */
-const timer_instance_t g_timer0 =
-{ .p_ctrl = &g_timer0_ctrl, .p_cfg = &g_timer0_cfg, .p_api = &g_timer_on_gpt };
+const timer_instance_t g_time_counter =
+{ .p_ctrl = &g_time_counter_ctrl, .p_cfg = &g_time_counter_cfg, .p_api = &g_timer_on_gpt };
 iic_master_instance_ctrl_t g_i2c_master_ctrl;
 const iic_master_extended_cfg_t g_i2c_master_extend =
 { .timeout_mode = IIC_MASTER_TIMEOUT_MODE_SHORT,

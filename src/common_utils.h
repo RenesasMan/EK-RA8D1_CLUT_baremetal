@@ -39,17 +39,18 @@
 #define LVL_ERR      (1u)       /* error conditions   */
 
 #define RESET_VALUE             (0x00)
-#define EP_INFO  "\r\nThis Example Project demonstrates the basic functionalities of the MIPI DSI device driver\r\n"\
+#define EP_INFO  "\r\nThis Example Project demonstrates the basic functionalities GLCDC CLUT Hardware \r\n"\
                   "on Renesas RA MCUs based on Renesas FSP. On successful initialization of MIPI DSI module,\r\n"\
                   "the EP will display 8-color bars on the MIPI LCD (external LCD connected to RA MCU) using\r\n"\
-                  "the graphics and MPI-DSI modules in FSP. A user menu will be provided over the RTT Viewer.\r\n"\
+                  "the RGB565 color scheme. On top of that, it will render a CLUT8,4, or 1 driven color bars\r\n"\
+                  "using the graphics and MPI-DSI modules in FSP. A user menu will be provided over the RTT Viewer.\r\n"\
                   "User can choose the time to enter Ultra-Low-Power State(ULPS) and touch the screen to exit\r\n"\
                   "this mode. Status information and error messages will be printed on Jlink RTT Viewer during\r\n"\
                   "the execution of the project.\r\n\n "\
 
 
 #define EP_VERSION              ("1.0")
-#define MODULE_NAME             "MIPI DSI"
+#define MODULE_NAME             "GLCDC CLUT"
 #define BANNER_INFO             "\r\n********************************************************************************"\
                                 "\r\n*   Renesas FSP Example Project for "MODULE_NAME" Module                            *"\
                                 "\r\n*   Example Project Version %s                                                *"\

@@ -25,6 +25,8 @@
 #include "r_mipi_dsi.h"
 #include "common_utils.h"
 #include "graphics_rendering.h"
+#include "time_counter/time_counter.h"
+#include "SEGGER_RTT/SEGGER_RTT.h"
 
 FSP_CPP_HEADER
 void R_BSP_WarmStart(bsp_warm_start_event_t event);
@@ -36,12 +38,35 @@ FSP_CPP_FOOTER
  **********************************************************************************************************************/
 void hal_entry(void)
 {
+    fsp_pack_version_t version = { RESET_VALUE };     /* fsp variable to store major/minor versions*/
+
+    /* Fetch FSP version to display on RTT */
+    R_FSP_VersionGet (&version);
+
+    /* Example Project information printed on the Console */
+    APP_PRINT(BANNER_INFO,EP_VERSION,version.version_id_b.major, version.version_id_b.minor, version.version_id_b.patch);
+    APP_PRINT(EP_INFO);
+
+    /* Initialize the counter to measure rendering times */
+    TimeCounter_Init();
+
+    /* Initialize SDRAM. */
+    bsp_sdram_init();
+
+    //clear background (RGB565) and foreground (CLUT) frame buffers
+    memset(&fb_background, 0x00, sizeof(fb_background));
+    memset(&fb_foreground, 0x00, sizeof(fb_foreground));
+
+    /* Initalize MIPI DSI drivers */
     mipi_dsi_entry();
 
+    /* Render foreground layer (driven by CLUT) */
     CLUT_init();
 
+    /* Render background layer (driven by RGB565) */
     RGB_init();
 
+    /* wait forever */
     while (true)
     {
         __NOP();
