@@ -1,4 +1,4 @@
-# Coffee Machine desgined by emWin AppWizard
+# GLCDC Demonstration of CLUT8/4/1
 
 ## Overview
 This application is a graphics application to show how the Color Look Up Table (CLUT) is used. Thise project employes CLUT8, CLUT4, and CLUT1. The CLUT reduces the memory footprint of the frame buffer, potentially allowing customer to store the frame buffer in internal SRAM.
