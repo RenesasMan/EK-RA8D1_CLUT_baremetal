@@ -1,8 +1,11 @@
-# GLCDC Demonstration of CLUT8/4/1
+# GLCDC Demonstration of CLUT8/4/1 with comparison to RGB565
 
 ## Overview
-This application is a graphics application to show how the Color Look Up Table (CLUT) is used. Thise project employes CLUT8, CLUT4, and CLUT1. The CLUT reduces the memory footprint of the frame buffer, potentially allowing customer to store the frame buffer in internal SRAM.
+This application compares the performance of two color depths, RGB565 and Color Look Up Table (CLUT). Thise project employes CLUT8, CLUT4, and CLUT1, which corresponds to color look up tables of 256, 16, and 2 distinct colors, respectively. The colors in the look up table are arbitrary 32-bit colors (ARGB). The CLUT reduces the memory footprint of the frame buffer, potentially allowing customer to store the frame buffer in internal SRAM.
 
+This project uses a CLUT on the foreground layer, painting the frame buffer with semi-transparent color bars. The transparent foreground allows the background to also be visible. The background is of an RGB565, 16-bit color depth. The foreground is driven by CLUT, with a 8-,4-, and 1-bit color table, settable as an FSP option (see build steps below).
+
+The project outputs debug text over RTT viewer (for CLUT8/4 0x220000e4, for CLUT1 0x220000a4 by default). This text includes the rendering time and frame buffer size for both the background (RGB565) and foreground (CLUT8/4/1).
 
 
 ## Preparation
